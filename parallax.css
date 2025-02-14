@@ -1,0 +1,63 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* Parallax Background Section 1 */
+.parallax1 {
+    background-image: url('image1.jpg'); /* Replace with your image */
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.parallax1 .message {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Black Block */
+.black-block {
+    background-color: black;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.black-block h2 {
+    color: #fff;
+    font-size: 2em;
+}
+
+/* Parallax Background Section 2 */
+.parallax2 {
+    background-image: url('image2.jpg'); /* Replace with your second image */
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.parallax2 .message {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+}
