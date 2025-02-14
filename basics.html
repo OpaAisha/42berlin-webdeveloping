@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basics</title>
+    <style>
+        body { /*pink background*/
+            background-color: pink;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1 { /*A title -so bigger- in white, centered*/
+            color: white;
+            text-align: center;
+            font-size: 64px;
+        }
+
+        .container { /*tells the browser to apply styles to any element that has that class.*/
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .shop img {
+            width: 100%;
+            /* height: auto; */
+            /* margin: 10; */
+            /* display: flex; */
+        }
+
+        .shop a {
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            color: blue;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
+        hr {
+            margin-top: 150px;
+            border: 0;
+            border-top: 2px solid black;
+        }
+
+        .footer {
+            text-align: right;
+            font-style: italic;
+            font-family: 'Courier New', monospace;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Basics! &#x2665;&#xfe0f; </h1>
+
+    <div class="container">
+        <div class="shop">
+            <img src="https://outvio.com/static/d2f89d2850b4bd6dc869407000b0cf52/03073/ckyycvre9000d7b9g66hmf6p7.webp" alt="Shop 1">
+            <a href="https://de.aliexpress.com/?src=google&albch=fbrnd&acnt=304-410-9721&isdl=y&aff_short_key=UneMJZVf&albcp=14792646854&albag=126476844174&slnk=&trgt=kwd-14802285088&plac=&crea=621046623501&netw=g&device=c&mtctp=e&memo1=&albbt=Google_7_fbrnd&aff_platform=google&albagn=888888&isSmbActive=false&isSmbAutoCall=false&needSmbHouyi=false&gad_source=1&gclid=EAIaIQobChMIhrOT6pvBiwMV6gQGAB1oQzfdEAAYASAAEgLJS_D_BwE&gatewayAdapt=glo2deu" target="_blank">Visit Shop 1</a>
+        </div>
+        <div class="shop">
+            <img src="https://www.symphonymusicshop.com/images/musical-equipment-01.jpg" alt="Shop 2">
+            <a href="https://www.symphonymusicshop.com/musical-equipment.htm" target="_blank">Visit Shop 2</a>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="footer">
+        © aopayeva 2025
+    </div>
+</body>
+</html>

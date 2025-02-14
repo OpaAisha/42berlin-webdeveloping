@@ -1,0 +1,10 @@
+ls -1 | grep -v '^\.' | tr '\n' ',' | sed 's/,$//'
+
+
+ls -1: Lists all files and directories in the current directory, one per line.
+
+grep -v '^\.': Filters out files and directories starting with a dot (hidden files and ..).
+
+tr '\n' ',': Replaces newline characters (\n) with commas, so the files and directories are separated by commas.
+
+sed 's/,$//': Removes the trailing comma at the end of the list, if present

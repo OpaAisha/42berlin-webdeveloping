@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colorful Table</title>
+
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%; /* Ensure the body covers full height */
+        }
+        /* Table style */
+        table {
+            width: 100%;  /* Table width covers the entire width of the screen */
+            height: 100vh; /* Table height covers the entire height of the viewport */
+            border-collapse: collapse; /*merge into a single border*/
+            margin: 0;  /* Remove any default margin */
+            padding: 0;
+        }
+
+        /* Table cell style */
+        td {
+            width: 50%;  /* Each cell will take 50% of the table's width */
+            height: 50%;  /* Each cell will take 50% of the table's height */
+            font-size: 3vw; /* Font size adjusts according to the viewport width */
+            font-family: Arial, sans-serif;
+            text-align: center;  /* Center the text inside the cell */
+            border: 1px solid black; /* Add a border to each cell */
+            font-weight: 100;
+            padding: 10px; /*Add padding to give some space inside the cells*/
+            box-sizing: border-box; /*Ensure padding is included in the width/height*/
+        }
+
+        /* Media query for small screen sizes */
+        @media (max-width: 798px) {
+            td {
+                font-size: 4vw;  /* Make the font size larger for small screens */
+                height: auto;  /* Allow the height of the cells to adjust automatically */
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+    <table>
+        <tr>
+            <td bgcolor="#66ff99" >This is the first box</td>
+            <td bgcolor=#e69f97   >This is the second box</td>
+        </tr>
+    </table>
+
+</body>
+</html>
