@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <style>
+    /* Simple styling to make it look better */
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f9;
+    }
+    .calculator {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    input, select {
+      margin: 10px;
+      padding: 8px;
+      font-size: 1rem;
+    }
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="calculator">
+    <h1>Calculator</h1>
+    <input type="number" id="leftValue" placeholder="Left number" min="0">
+    <select id="operator">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+      <option value="%">%</option>
+    </select>
+    <input type="number" id="rightValue" placeholder="Right number" min="0">
+    <input type="submit" value="Try me!" onclick="calculate()">
+  </div>
+
+  <script>
+    // Function to handle the calculation
+    function calculate() {
+      let leftValue = parseInt(document.getElementById('leftValue').value);
+      let rightValue = parseInt(document.getElementById('rightValue').value);
+      let operator = document.getElementById('operator').value;
+      let result;
+
+      // Check if inputs are valid (positive integers)
+      if (isNaN(leftValue) || isNaN(rightValue) || leftValue < 0 || rightValue < 0) {
+        alert("Error :(");
+        return;
+      }
+
+      // Handle division by zero
+      if ((operator === '/' || operator === '%') && rightValue === 0) {
+        alert("It’s over 9000!");
+        return;
+      }
+
+      // Perform calculation based on selected operator
+      switch (operator) {
+        case '+':
+          result = leftValue + rightValue;
+          break;
+        case '-':
+          result = leftValue - rightValue;
+          break;
+        case '*':
+          result = leftValue * rightValue;
+          break;
+        case '/':
+          result = leftValue / rightValue;
+          break;
+        case '%':
+          result = leftValue % rightValue;
+          break;
+        default:
+          result = NaN;
+          break;
+      }
+
+      // Show result in an alert and log it to the console
+      alert("Result: " + result);
+      console.log("Result: " + result);
+    }
+
+    // Pop-up alert every 30 seconds
+    setInterval(() => {
+      alert("Please, use me...");
+    }, 30000);  // 30,000 milliseconds = 30 seconds
+  </script>
+
+</body>
+</html>

@@ -1,63 +1,82 @@
-/* General Reset */
+/* Reset the default margin and padding 
+    This helps to avoid unwanted shifts
+    in content and makes the layout easier to control.*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
-/* Basic styling */
+/* Defines the font family for the entire webpage */
 body {
     font-family: Arial, sans-serif;
-    color: #fff;
-    line-height: 1.6;
+}
+/* Parallax Sections Styling */
+/* Styles applied to all sections with a parallax background */
+.parallax-section {
+    position: relative; /* Ensures elements inside can be positioned properly */
+    height: 100vh; /* Makes each section take up the full height of the viewport */
+    background-size: cover; /* Ensures the background image covers the entire section */
+    background-position: center; /* Centers the background image */
+    background-repeat:no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /*Enables the parallax scrolling effect */
+    display: flex; /* Uses flexbox to center the content */
+    justify-content: center; /* Horizontally centers the content */
+    align-items: center; /* Vertically centers the content */
+    text-align: center; /* Centers text inside the section */
+    z-index: 2; /* Ensures it is properly layered */
+}
+/* Background Images for Parallax Sections */
+/* Applies a specific background image for the first parallax section */
+#section1 {
+    background-image: url('https://media.greatbigphotographyworld.com/wp-content/uploads/2023/02/environmental-photography.jpg');
 }
 
-/* Parallax Background Section 1 */
-.parallax1 {
-    background-image: url('image1.jpg'); /* Replace with your image */
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    height: 100vh; /* Viewport height */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+#section2 {
+    background-image: url('https://environment.ec.europa.eu/sites/default/files/styles/oe_theme_full_width_banner_4_1/public/2022-07/MicrosoftTeams-image%20%282%29.png.webp?itok=Mtj2IcQW');
 }
-
-.parallax1 .message {
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    padding: 20px;
-    border-radius: 10px;
+/* Styling for Messages in All Sections */
+/* Ensures the text in each section is properly centered and readable */
+.message {
+    position: absolute; /* Allows precise positioning */
+    top: 50%; /* Moves the text down by 50% of the section’s height */
+    left: 50%; /* Moves the text to the center horizontally */
+    transform: translate(-50%, -50%); /* Ensures perfect centering */
+    color: white; /* White text for better contrast against backgrounds */
+    font-size: 2rem; /* Sets a readable font size */ 
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Adds a shadow to improve readability */
+    padding: 15px; /* Adds padding around the text */
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background to enhance readability */
+    border-radius: 8px; /* Softens the edges with rounded corners */
+    max-width: 80%; /* Prevents the text box from being too wide */
+    text-align: center; /* Ensures proper text alignment */
+    word-wrap: break-word; /* Forces long words to break and wrap */
+    z-index: 2; /* Ensures text appears above the background */
 }
-
-/* Black Block */
-.black-block {
-    background-color: black;
-    padding: 50px 20px;
-    text-align: center;
+/* Styling for the Black Section */
+/* Styles for the black section (between the two parallax sections) */
+.black-section {
+    background-color: black; /* Solid black background */
+    color: white; /* White text for high contrast */
+    height: 50vh; /* Full viewport height */
+    display: flex; /* Uses flexbox to center content */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    position: relative; /* Ensures proper layering */
+    z-index: 5; /* Higher z-index to ensure it's above other sections */
 }
-
-.black-block h2 {
-    color: #fff;
-    font-size: 2em;
-}
-
-/* Parallax Background Section 2 */
-.parallax2 {
-    background-image: url('image2.jpg'); /* Replace with your second image */
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    height: 100vh; /* Viewport height */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.parallax2 .message {
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    padding: 20px;
-    border-radius: 10px;
+/*  Message Styling in the Black Section*/
+/* Makes sure the message in the black section is styled the same as in parallax sections */
+.black-section .message {
+    position: absolute; /* Aligns it similarly to other messages */
+    top: 50%; /* Centers vertically */
+    left: 50%; /* Centers horizontally */
+    transform: translate(-50%, -50%); /* Ensures perfect alignment */
+    font-size: 2rem; /* Ensures text size matches other sections */
+    text-align: center; /* Centers the text */
+    max-width: 80%; /* Prevents overly wide text blocks */
+    padding: 15px; /* Adds spacing */
+    background: rgba(0, 0, 0, 0.6); /* Keeps it readable */
+    border-radius: 8px; /* Makes it look neat */
+    word-wrap: break-word; /* Prevents text from overflowing */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Improves readability */
 }

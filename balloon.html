@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Balloon Effect</title>
+  <style>
+    /* Initial styling for the balloon */
+    .balloon {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      border-radius: 50%; /* Creates the round shape */
+      transition: all 0.3s ease; /* Smooth transition for size and color change */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 50px auto;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="balloon" class="balloon"></div>
+
+  <script>
+    const balloon = document.getElementById('balloon');
+    let currentColorIndex = 0;
+    const colors = ['red', 'green', 'blue']; // Color cycle
+
+    // Function to handle the size change and color change on click
+    balloon.addEventListener('click', function() {
+      // Increase size by 10px
+      let currentSize = parseInt(window.getComputedStyle(balloon).width);
+      if (currentSize >= 420) {
+        balloon.style.width = '200px';
+        balloon.style.height = '200px';
+        currentColorIndex = 0; // Reset to red
+      } else {
+        balloon.style.width = (currentSize + 10) + 'px';
+        balloon.style.height = (currentSize + 10) + 'px';
+        // Change color
+        balloon.style.backgroundColor = colors[currentColorIndex];
+        currentColorIndex = (currentColorIndex + 1) % colors.length;
+      }
+    });
+
+    // Function to shrink the balloon on mouse leave, with reverse color change
+    balloon.addEventListener('mouseenter', function() {
+      // Do nothing on mouse enter, only handle mouse leave
+    });
+
+    balloon.addEventListener('mouseleave', function() {
+      // Decrease size by 5px (but not below 200px)
+      let currentSize = parseInt(window.getComputedStyle(balloon).width);
+      if (currentSize > 200) {
+        balloon.style.width = (currentSize - 5) + 'px';
+        balloon.style.height = (currentSize - 5) + 'px';
+      }
+      // Reverse the color change order
+      currentColorIndex = (currentColorIndex - 1 + colors.length) % colors.length;
+      balloon.style.backgroundColor = colors[currentColorIndex];
+    });
+  </script>
+
+</body>
+</html>
